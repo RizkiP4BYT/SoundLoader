@@ -1,0 +1,26 @@
+{
+  "name": "backend",
+  "module": "server.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "bun run server.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/cors": "^2.8.18"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.817.0",
+    "@distube/ytdl-core": "^4.16.10",
+    "@types/express": "^5.0.2",
+    "backend": "file:",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "ffmpeg-static": "^5.2.0",
+    "soundcloud-downloader": "^1.0.0"
+  }
+}
