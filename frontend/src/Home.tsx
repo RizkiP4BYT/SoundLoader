@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import axios from "axios"
 import { Box, Input, Button, FormControl, FormLabel } from "@mui/joy"
 import CustomSnackbar from "./components/CustomSnackbar"
 
@@ -25,12 +26,12 @@ const SoundCloudDownloader: React.FC = () => {
 
         try {
             const baseUrl = process.env.REACT_APP_ENDPOINT_URL
-            const response = await fetch(`${baseUrl}/api/soundcloud`, {
-                method: "POST",
+            const response = await axios.post(`${baseUrl}/api/soundcloud`, {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ url: link }),
+
             })
-            const data: SoundCloudResponse = await response.json()
+            const data: SoundCloudResponse = await response.data.json()
 
             if (data.downloadUrl) {
                 setDownloadUrl(data.downloadUrl)
